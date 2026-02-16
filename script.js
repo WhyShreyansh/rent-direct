@@ -41,3 +41,23 @@ searchBtn.addEventListener('click', (e) => {
     
     // In a real application, this would make an API call or redirect to search results
 });
+
+// Smooth Scroll for Navigation Links
+const navLinks = document.querySelectorAll('a[href^="#"]');
+
+navLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+        const href = link.getAttribute('href');
+        if (href !== '#' && document.querySelector(href)) {
+            e.preventDefault();
+            const target = document.querySelector(href);
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            
+            // Close mobile menu if open
+            mobileMenu.classList.remove('active');
+            const icon = mobileMenuBtn.querySelector('i');
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+        }
+    });
+});
