@@ -85,3 +85,18 @@ document.querySelectorAll('.property-card, .feature-card').forEach(card => {
     observer.observe(card);
 });
 
+// Sticky Navigation
+let lastScroll = 0;
+const navbar = document.querySelector('.navbar');
+
+window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+    
+    if (currentScroll <= 0) {
+        navbar.style.boxShadow = '0 1px 2px 0 rgba(0, 0, 0, 0.05)';
+    } else {
+        navbar.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1)';
+    }
+    
+    lastScroll = currentScroll;
+});
