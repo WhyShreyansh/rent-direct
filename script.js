@@ -130,3 +130,16 @@ selects.forEach(select => {
         this.style.boxShadow = 'none';
     });
 });
+
+// Add loading state to search button
+searchBtn.addEventListener('click', function() {
+    const originalText = this.innerHTML;
+    this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Searching...';
+    this.disabled = true;
+    
+    // Simulate search delay
+    setTimeout(() => {
+        this.innerHTML = originalText;
+        this.disabled = false;
+    }, 2000);
+});
