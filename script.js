@@ -115,3 +115,18 @@ propertyImages.forEach(image => {
         alert(`Opening details for: ${propertyTitle}`);
     });
 });
+
+// Form Select Enhancement
+const selects = document.querySelectorAll('select');
+
+selects.forEach(select => {
+    select.addEventListener('focus', function() {
+        this.style.borderColor = '#3b82f6';
+        this.style.boxShadow = '0 0 0 3px rgba(59, 130, 246, 0.1)';
+    });
+    
+    select.addEventListener('blur', function() {
+        this.style.borderColor = '#e2e8f0';
+        this.style.boxShadow = 'none';
+    });
+});
