@@ -100,3 +100,18 @@ window.addEventListener('scroll', () => {
     
     lastScroll = currentScroll;
 });
+
+// Add hover effect to property images
+const propertyImages = document.querySelectorAll('.property-image');
+
+propertyImages.forEach(image => {
+    image.addEventListener('mouseenter', () => {
+        image.style.cursor = 'pointer';
+    });
+    
+    image.addEventListener('click', () => {
+        const propertyCard = image.closest('.property-card');
+        const propertyTitle = propertyCard.querySelector('.property-title').textContent;
+        alert(`Opening details for: ${propertyTitle}`);
+    });
+});
