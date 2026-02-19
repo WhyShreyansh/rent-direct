@@ -224,3 +224,28 @@ const specs = document.querySelectorAll('.property-specs span');
 specs.forEach(spec => {
     spec.setAttribute('title', spec.textContent);
 });
+
+// Add ripple effect to buttons
+function createRipple(event) {
+    const button = event.currentTarget;
+    const ripple = document.createElement('span');
+    const diameter = Math.max(button.clientWidth, button.clientHeight);
+    const radius = diameter / 2;
+    
+    ripple.style.width = ripple.style.height = `${diameter}px`;
+    ripple.style.left = `${event.clientX - button.offsetLeft - radius}px`;
+    ripple.style.top = `${event.clientY - button.offsetTop - radius}px`;
+    ripple.classList.add('ripple');
+    
+    const rippleElement = button.querySelector('.ripple');
+    if (rippleElement) {
+        rippleElement.remove();
+    }
+    
+    button.appendChild(ripple);
+}
+
+const buttons = document.querySelectorAll('button, .btn-register, .btn-login');
+buttons.forEach(button => {
+    button.addEventListener('click', createRipple);
+});
