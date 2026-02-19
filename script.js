@@ -249,3 +249,7 @@ const buttons = document.querySelectorAll('button, .btn-register, .btn-login');
 buttons.forEach(button => {
     button.addEventListener('click', createRipple);
 });
+
+// Console welcome message
+console.log('%c RentDirect - Broker-Free Rentals ', 'background: #3b82f6; color: white; font-size: 20px; padding: 10px;');
+console.log('%c Find your perfect home without brokers! ', 'color: #3b82f6; font-size: 14px;');
