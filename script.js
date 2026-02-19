@@ -143,3 +143,13 @@ searchBtn.addEventListener('click', function() {
         this.disabled = false;
     }, 2000);
 });
+
+// View All Properties Handler
+const viewAllLink = document.querySelector('.view-all');
+
+if (viewAllLink) {
+    viewAllLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        alert('Loading all properties...\n\nIn a real application, this would navigate to the properties listing page.');
+    });
+}
