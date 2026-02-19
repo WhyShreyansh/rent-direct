@@ -153,3 +153,19 @@ if (viewAllLink) {
         alert('Loading all properties...\n\nIn a real application, this would navigate to the properties listing page.');
     });
 }
+
+// Counter Animation for Statistics (if you want to add stats)
+function animateCounter(element, target, duration = 2000) {
+    let start = 0;
+    const increment = target / (duration / 16);
+    
+    const timer = setInterval(() => {
+        start += increment;
+        if (start >= target) {
+            element.textContent = target.toLocaleString();
+            clearInterval(timer);
+        } else {
+            element.textContent = Math.floor(start).toLocaleString();
+        }
+    }, 16);
+}
