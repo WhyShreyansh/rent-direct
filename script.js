@@ -217,3 +217,10 @@ window.addEventListener('resize', () => {
         }
     }, 250);
 });
+
+// Initialize tooltips for property specs (optional enhancement)
+const specs = document.querySelectorAll('.property-specs span');
+
+specs.forEach(spec => {
+    spec.setAttribute('title', spec.textContent);
+});
