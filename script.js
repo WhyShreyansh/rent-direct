@@ -1,6 +1,6 @@
 // Mobile Menu Toggle
 const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-c                 onst mobileMenu = document.getElementById('mobileMenu');
+const mobileMenu = document.getElementById('mobileMenu');
 
 mobileMenuBtn.addEventListener('click', () => {
     mobileMenu.classList.toggle('active');
